@@ -32,7 +32,7 @@ Where `path` is a dot-notation kind of string `a.b.c`.
 
 - If `value` is passed it will be set on the path.
 - Set `deep.p = true` if you want non-existent paths to be initialized.
-- If you want to unset (or delete), pass `undefined` as `value`.
+- If you want to unset (or delete), pass `undefined` as the `value`.
 
 ## Installation
 
@@ -45,9 +45,9 @@ npm install deep-get-set
 ## Note
 
 There's a dozen modules like this on [npm](https://npmjs.org).
-This is a fork from @juliangruber [deep-access](https://github.com/juliangruber/deep-access) module, with a big portion of code directly copied from here: https://github.com/substack/js-traverse/blob/master/index.js#L11-L18.
+This is a fork from [@juliangruber's](https://github.com/juliangruber) [deep-access](https://github.com/juliangruber/deep-access) module, with a big portion of code directly copied from here: https://github.com/substack/js-traverse/blob/master/index.js#L11-L18.
 
-**Similar** modules:
+Similar modules:
 
 - https://github.com/deoxxa/dotty (this one I like because it uses recursion)
 - https://github.com/Ntran013/dot-access (pretty much the same as this)
@@ -57,7 +57,6 @@ This is a fork from @juliangruber [deep-access](https://github.com/juliangruber/
 
 (MIT)
 
-Copyright (c) 2013 Julian Gruber &lt;julian@juliangruber.com&gt;
 Copyright (c) 2013 Arturo Castillo Delgado &lt;19@8302.net&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
