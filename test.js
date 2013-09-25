@@ -27,10 +27,21 @@ test('deep sets', function (t) {
     }
   };
 
+  function p () {
+    deep(obj, 'yep.nope', 'p');
+  }
+  
   t.equal(deep(obj, 'foo', 'yep'), 'yep');
   t.equal(obj.foo, 'yep');
   t.equal(deep(obj, 'bar.baz.beep', 'nope'), 'nope');
   t.equal(obj.bar.baz.beep, 'nope');
+  t.throws(p);
+
+  deep.p = true;
+
+  t.equal(deep(obj, 'yep.nope', 'p'), 'p');
+  t.equal(obj.yep.nope, 'p');
+
   t.end();
 });
 

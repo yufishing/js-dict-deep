@@ -1,10 +1,10 @@
 {
-  "name": "deep-access",
-  "description": "Access nested object properties via strings",
-  "version": "0.0.1",
+  "name": "deep-get-set",
+  "description": "Set and get values on objects via dot-notation kind of strings.",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/juliangruber/deep-access.git"
+    "url": "git://github.com/acstll/deep-get-set.git"
   },
   "homepage": "https://github.com/juliangruber/deep-access",
   "main": "index.js",
@@ -24,11 +24,7 @@
     "nested",
     "string"
   ],
-  "author": {
-    "name": "Julian Gruber",
-    "email": "mail@juliangruber.com",
-    "url": "http://juliangruber.com"
-  },
+  "author": "Arturo Castillo Delgado <19@8302.net>",
   "license": "MIT",
   "testling": {
     "files": "test.js",
