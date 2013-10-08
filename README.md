@@ -1,6 +1,6 @@
 # deep-get-set
 
-Set and get values on objects via dot-notation kind of strings.
+Set and get values on objects via dot-notation strings.
 
 [![testling badge](https://ci.testling.com/acstll/deep-get-set.png)](https://ci.testling.com/acstll/deep-get-set)
 
@@ -17,18 +17,19 @@ var obj = {
 
 // Get
 console.log(deep(obj, 'foo.bar'));
-// => "baz"
+  // => "baz"
 
 // Set
-console.log(deep(obj, 'foo.bar', 1));
-// => 1
+deep(obj, 'foo.bar', 'hello');
+console.log(obj.foo.bar);
+  // => "hello"
 ```
 
 ## API
 
 ### deep(object, path[, value])
 
-Where `path` is a dot-notation kind of string `a.b.c`.
+Where `path` is a dot-notation string `foo.bar`.
 
 - If `value` is passed it will be set on the path.
 - Set `deep.p = true` if you want non-existent paths to be initialized.
@@ -55,24 +56,4 @@ Similar modules:
 
 ## License
 
-(MIT)
-
-Copyright (c) 2013 Arturo Castillo Delgado &lt;19@8302.net&gt;
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+MIT

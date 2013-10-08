@@ -1,12 +1,12 @@
 {
   "name": "deep-get-set",
-  "description": "Set and get values on objects via dot-notation kind of strings.",
-  "version": "0.1.0",
+  "description": "Set and get values on objects via dot-notation strings.",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/acstll/deep-get-set.git"
   },
-  "homepage": "https://github.com/juliangruber/deep-access",
+  "homepage": "https://github.com/acstll/deep-get-set",
   "main": "index.js",
   "scripts": {
     "test": "tape test.js"
