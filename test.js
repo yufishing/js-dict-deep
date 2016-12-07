@@ -27,13 +27,13 @@ test('deep gets with array of paths', function (t) {
       'baz.beep': 'blop'
     }
   };
-  
+
   t.equal(deep(obj, ['bar', 'baz', 'beep']), 'boop');
   t.equal(deep(obj, ['bar', 'baz', 'beep', 'yep', 'nope']), undefined);
-  t.equal(deep(obj, ['bar', 'bar.beep']), 'blop');
+  t.equal(deep(obj, ['bar', 'baz.beep']), 'blop');
   t.end();
 })
-  
+
 test('deep sets', function (t) {
   var obj = {
     foo: 'bar',
@@ -62,7 +62,7 @@ test('deep sets', function (t) {
   t.end();
 });
 
-test('deep sets with array of paths', function (r) {
+test('deep sets with array of paths', function (t) {
   var obj = {
     foo: 'bar',
     bar: {
@@ -77,7 +77,7 @@ test('deep sets with array of paths', function (r) {
   t.equal(deep(obj, ['bar', 'baz', 'beep'], 'nope'), 'nope');
   t.equal(obj.bar.baz.beep, 'nope');
   t.equal(deep(obj, ['bar', 'baz.beep'], 'nooope'), 'nooope');
-  t.equal(obj.bar.['baz.beep'], 'nooope');
+  t.equal(obj.bar['baz.beep'], 'nooope');
   t.end();
 });
 
