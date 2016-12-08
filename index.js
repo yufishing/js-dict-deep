@@ -8,7 +8,7 @@ function deep (obj, path, value) {
 }
 
 function get (obj, path) {
-  var keys = path.split('.');
+  var keys = Array.isArray(path) ? path : path.split('.');
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
     if (!obj || !hasOwnProp.call(obj, key)) {
@@ -21,7 +21,7 @@ function get (obj, path) {
 }
 
 function set (obj, path, value) {
-  var keys = path.split('.');
+  var keys = Array.isArray(path) ? path : path.split('.');
   for (var i = 0; i < keys.length - 1; i++) {
     var key = keys[i];
     if (deep.p && !hasOwnProp.call(obj, key)) obj[key] = {};
