@@ -98,3 +98,52 @@ test('deep deletes', function (t) {
   t.equal(deep(obj, 'bar.baz.beep'), undefined);
   t.end();
 });
+
+test('do not get `__proto__`, `prototype` or `constructor` properties', function (t) {
+  var obj = {
+    isAdmin: false,
+    __proto__: {
+      isAdmin: true
+    },
+    prototype: {
+      isAdmin: true
+    },
+    constructor: {
+      isAdmin: true,
+      prototype: {
+        isAdmin: true
+      }
+    }
+  };
+
+  t.equal(deep(obj, 'isAdmin'), false);
+  t.equal(deep(obj, '__proto__.isAdmin'), undefined);
+  t.equal(deep(obj, 'prototype.isAdmin'), undefined);
+  t.equal(deep(obj, 'constructor.isAdmin'), undefined);
+  t.equal(deep(obj, 'constructor.prototype.isAdmin'), undefined);
+  t.end();
+});
+
+test('do not set `__proto__`, `prototype` or `constructor` properties', function (t) {
+  var obj = {};
+
+  deep.p = true;
+
+  deep(obj, 'isAdmin', false);
+  deep(obj, '__proto__.isAdmin', true);
+  deep(obj, 'prototype.isAdmin', true);
+  deep(obj, 'constructor.isAdmin', true);
+  deep(obj, 'constructor.prototype.isAdmin', true);
+
+  t.equal(obj.isAdmin, false);
+  t.equal(obj.__proto__ && obj.__proto__.isAdmin, undefined);
+  t.equal(obj.prototype && obj.prototype.isAdmin, undefined);
+  t.equal(obj.constructor && obj.constructor.isAdmin, undefined);
+  t.equal(
+    obj.constructor &&
+    obj.constructor.prototype &&
+    obj.constructor.prototype.isAdmin,
+    undefined
+  );
+  t.end();
+});
