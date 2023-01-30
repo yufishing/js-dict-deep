@@ -1,18 +1,18 @@
-# deep-get-set
+# js-dict-deep
 
-Set and get values on objects via dot-notation strings.
+Set and get values on objects via dot-notation strings with filter.
 
-[![testling badge](https://ci.testling.com/acstll/deep-get-set.png)](https://ci.testling.com/acstll/deep-get-set)
 
 ## Example
 
 ```js
-var deep = require('deep-get-set');
+var deep = require('js-dict-deep');
 
 var obj = {
   foo: {
     bar: 'baz',
-    'bar.baz': 'qux'
+    'bar.baz': 'qux',
+    car: ['audi', 'benz', 'bmw']
   }
 };
 
@@ -39,8 +39,9 @@ console.log(obj.foo['bar.baz']);
 
 ### deep(object, path[, value])
 
-Where `path` is a dot-notation string `foo.bar` or an array of strings.
+Where `path` is a dot-notation string `foo.bar`, `for.car[0]` or an array of strings.
 
+- If `path` step with qualificaiton [filter] and the value is array type, will search the specific item from the array. `filter` can be key=value or index.  
 - If `value` is passed it will be set on the path.
 - Set `deep.p = true` if you want non-existent paths to be initialized.
 - If you want to unset (or delete), pass `undefined` as the `value`.
@@ -50,13 +51,13 @@ Where `path` is a dot-notation string `foo.bar` or an array of strings.
 With [npm](https://npmjs.org) do:
 
 ```bash
-npm install deep-get-set
+npm install js-dict-deep
 ```
 
 ## Note
 
-There's a dozen modules like this on [npm](https://npmjs.org).
-This is a fork from [@juliangruber's](https://github.com/juliangruber) [deep-access](https://github.com/juliangruber/deep-access) module, with a big portion of code directly copied from here: https://github.com/substack/js-traverse/blob/master/index.js#L11-L18.
+There's a dozen modules like this on [npm](https://npmjs.org). 
+This is a update from [@acstll's](https://github.com/acstll) [deep-get-set](https://github.com/acstll/deep-get-set) module.
 
 Similar modules:
 
