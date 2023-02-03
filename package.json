@@ -1,22 +1,25 @@
 {
-  "name": "deep-get-set",
-  "description": "Set and get values on objects via dot-notation strings.",
-  "version": "1.1.1",
+  "name": "js-dict-deep",
+  "description": "Set and get values on objects via dot-notation strings with filter support.",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/acstll/deep-get-set.git"
+    "url": "git@github.com:yufishing/js-dict-deep.git"
   },
-  "homepage": "https://github.com/acstll/deep-get-set",
+  "homepage": "https://github.com/yufishing/js-dict-deep.git",
   "main": "index.js",
   "scripts": {
     "test": "tape test.js"
   },
   "dependencies": {},
   "devDependencies": {
-    "tape": "~1.0.4"
+    "tape": "^5.6.0"
   },
   "keywords": [
+    "dict",
     "deep",
+    "path",
+    "filter",
     "object",
     "access",
     "property",
@@ -24,7 +27,7 @@
     "nested",
     "string"
   ],
-  "author": "Arturo Castillo Delgado <19@8302.net>",
+  "author": "Fisher Yu <plmkop@gmail.com>",
   "license": "MIT",
   "testling": {
     "files": "test.js",
