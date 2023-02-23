@@ -25,7 +25,7 @@ function _get_ (obj, key){
           for (var j = 0; j < obj.length; j++){
             if (hasOwnProp.call(obj[j], s[1]) && obj[j][s[1]] == s[2]){
               obj = obj[j];
-              break;
+              return obj;
             }
           }
           obj = undefined
